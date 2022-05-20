@@ -1,4 +1,5 @@
 {
+    "root": true,
     "env": {
         "browser": true,
         "es2021": true
@@ -20,9 +21,14 @@
         "sourceType": "module"
     },
     "plugins": [
+        "eslint-comments",
         "react"
     ],
     "rules": {
         "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+        "@typescript-eslint/no-var-requires": 0,
+        "@typescript-eslint/camelcase": 0,
+        "@typescript-eslint/ban-ts-ignore": 0,
+        "prefer-const": 0
     }
 }
