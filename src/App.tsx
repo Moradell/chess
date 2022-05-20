@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
 
-const App = () => {
+function App() {
   return (
     <div className="App">
-
+      Chess12
     </div>
   );
 }
