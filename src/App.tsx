@@ -1,9 +1,11 @@
 import React from 'react';
 
+import BoardComponent from './components/BoardComponent/BoardComponent';
+
 function App() {
   return (
-    <div className="App">
-      Chess12
+    <div className="app">
+      <BoardComponent />
     </div>
   );
 }

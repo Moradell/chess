@@ -1,7 +1,21 @@
 @import '..//variables';
 
+* {
+  margin: 0;
+  height: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: #d0d0d0;
   color: #0e0e0f;
   font-family: $font-family-ptserif;
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
