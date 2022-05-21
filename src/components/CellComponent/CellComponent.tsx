@@ -16,6 +16,8 @@ export default function CellComponent({ cell }: CellProps) {
       [styles.white_cell]: cell.color === 'white',
       [styles.black_cell]: cell.color === 'black',
     })}
-    />
+    >
+      {cell.figure}
+    </div>
   );
 }
