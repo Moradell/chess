@@ -5,7 +5,7 @@ import styles from './CellComponent.module.scss';
 export default function CellComponent() {
   return (
     <div className={styles.cell}>
-        CellComponent
+      CellComponent
     </div>
   );
 }

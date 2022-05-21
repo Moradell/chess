@@ -19,3 +19,11 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.white-cell {
+  background-color: $white-cell-background;
+}
+
+.black-cell {
+  background-color: $black-cell-background;
+}
