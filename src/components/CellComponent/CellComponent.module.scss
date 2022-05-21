@@ -1,11 +1,19 @@
 @import '../../styles/variables';
 
 .cell {
-    width: 64px;
-    height: 64px;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    width: 64px;
+    height: 64px;
+}
+
+.cell img {
+    position: relative;
+
+    width: 48px;
+    height: 48px;
 }
 
 .white_cell {

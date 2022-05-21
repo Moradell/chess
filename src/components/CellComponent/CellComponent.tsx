@@ -17,7 +17,9 @@ export default function CellComponent({ cell }: CellProps) {
       [styles.black_cell]: cell.color === 'black',
     })}
     >
-      {cell.figure}
+      {cell.figure?.logo && (
+        <img src={cell.figure.logo} alt={cell.figure.name} />
+      )}
     </div>
   );
 }
