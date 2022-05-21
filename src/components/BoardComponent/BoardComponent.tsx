@@ -2,12 +2,28 @@ import React from 'react';
 
 import CellComponent from '../CellComponent/CellComponent';
 
+import { Board } from '../../models/Board';
+import { Cell } from '../../models/Cell';
+
 import styles from './BoardComponent.module.scss';
 
-export default function BoardComponent() {
+interface BoardProps {
+  board: Board;
+}
+
+export default function BoardComponent({ board }: BoardProps) {
   return (
     <div className={styles.board}>
-      <CellComponent />
+      {board.cells.map((row: Cell[], index: number) => (
+        <React.Fragment key={index}>
+          {row.map((cell: Cell) => (
+            <CellComponent
+              cell={cell}
+              key={cell.id}
+            />
+          ))}
+        </React.Fragment>
+      ))}
     </div>
   );
 }

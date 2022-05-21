@@ -1,4 +1,5 @@
 import { Cell } from "./Cell";
+import { Colors } from "../constants/colors.enum";
 
 export class Board {
     cells: Cell[][] = [];
@@ -8,9 +9,9 @@ export class Board {
             const row: Cell[] = [];
             for (let j = 0; j < 8; j++) {
                 if ((i + j) % 2 !== 0) {
-                    row.push(new Cell()) // black figures
+                    row.push(new Cell(this, j, i, Colors.BLACK, null));
                 } else {
-                    row.push(new Cell()) // white figure
+                    row.push(new Cell(this, j, i, Colors.WHITE, null));
                 }
             }
             this.cells.push(row);

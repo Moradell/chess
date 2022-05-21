@@ -1,7 +1,17 @@
+@import '../../styles/variables';
+
 .cell {
     width: 64px;
     height: 64px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.white_cell {
+    background-color: $white-cell-background;
+}
+
+.black_cell {
+    background-color: $black-cell-background;
 }
