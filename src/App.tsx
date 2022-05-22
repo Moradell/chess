@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
+import Timer from './components/Timer/Timer';
 import BoardComponent from './components/BoardComponent/BoardComponent';
 import LostFigures from './components/LostFigures/LostFigures';
 
@@ -32,6 +33,10 @@ function App() {
 
     return (
         <div className="app">
+            <Timer
+                restart={restart}
+                currentPlayer={currentPlayer}
+            />
             <BoardComponent
                 board={board}
                 setBoard={setBoard}

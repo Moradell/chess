@@ -26,5 +26,5 @@ export default function LostFigures({ title, figures }: LostFiguresProps) {
             </div>
         ))}
     </div>
-  )
+  );
 }
