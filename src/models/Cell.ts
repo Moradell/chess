@@ -90,7 +90,15 @@ export class Cell {
         return true;
     }
 
-    public isEmpty() {
+    public isEmpty(): boolean {
         return this.figure === null;
+    }
+
+    public isEnemy(target: Cell): boolean {
+        if (target.figure) {
+            return this.figure?.color !== target.figure.color;
+        }
+
+        return false;
     }
 }
