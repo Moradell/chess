@@ -23,3 +23,20 @@
 .black_cell {
     background-color: $black-cell-background;
 }
+
+.selected_cell {
+    background-color: $selected-cell-background;
+}
+
+.available_cell {
+    height: 12px;
+    width: 12px;
+
+    border-radius: 50%;
+
+    background-color: $available-cell-background;
+}
+
+.available_cell_background {
+    background-color: $available-cell-background;
+}

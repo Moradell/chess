@@ -5,26 +5,27 @@ import BoardComponent from './components/BoardComponent/BoardComponent';
 import { Board } from './models/Board';
 
 function App() {
-  const [board, setBoard] = useState(new Board());
+    const [board, setBoard] = useState<Board>(new Board());
 
-  function restart() {
-    const newBoard = new Board();
-    newBoard.initCells();
-    newBoard.addFigures();
-    setBoard(newBoard);
-  }
+    function restart() {
+        const newBoard = new Board();
+        newBoard.initCells();
+        newBoard.addFigures();
+        setBoard(newBoard);
+    }
 
-  useEffect(() => {
-    restart();
-  }, []);
+    useEffect(() => {
+        restart();
+    }, []);
 
-  return (
-    <div className="app">
-      <BoardComponent
-        board={board}
-      />
-    </div>
-  );
+    return (
+        <div className="app">
+        <BoardComponent
+            board={board}
+            setBoard={setBoard}
+        />
+        </div>
+    );
 }
 
 export default App;
