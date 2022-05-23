@@ -54,7 +54,7 @@ export default function BoardComponent({
     }
 
     return (
-        <div>
+        <div className={styles.board_wrapper}>
             <h3>Current player {currentPlayer?.color}</h3>
             <div className={styles.board}>
                 {board.cells.map((row: Cell[], index: number) => (

@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import Timer from './components/Timer/Timer';
 import BoardComponent from './components/BoardComponent/BoardComponent';
 import LostFigures from './components/LostFigures/LostFigures';
+import GameInformationBar from './components/GameInformationBar/GameInformationBar';
+import GameOptionsBar from './components/GameOptionsBar/GameOptionsBar';
 
 import { Board } from './models/Board';
 import { Player } from './models/Player';
@@ -37,12 +39,14 @@ function App() {
                 restart={restart}
                 currentPlayer={currentPlayer}
             />
+            <GameInformationBar />
             <BoardComponent
                 board={board}
                 setBoard={setBoard}
                 currentPlayer={currentPlayer}
                 swapPlayer={swapPlayer}
             />
+            <GameOptionsBar />
             <div>
                 <LostFigures
                     title='White figures'
