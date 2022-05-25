@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
-import { RootState } from './store/store';
 import { toggleCurrentPlayer } from './store/gameInformationSlice';
 import { Board } from './models/Board';
 
@@ -15,14 +14,11 @@ import GameOptionsBar from './components/GameOptionsBar/GameOptionsBar';
 function App() {
     const [board, setBoard] = useState<Board>(new Board());
 
-    const currUsr = useSelector((state: RootState) => state.gameInfo.currentPlayer);
-
     const dispatch = useDispatch();
     const swapPlayer = () => dispatch(toggleCurrentPlayer());
 
     useEffect(() => {
         restart();
-        console.log(currUsr);
     }, []);
 
     function restart() {
