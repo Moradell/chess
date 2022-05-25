@@ -57,7 +57,9 @@ export default function BoardComponent({
 
     return (
         <div className={styles.board_wrapper}>
-            <h3>Current player {currentPlayer}</h3>
+            <h3 className={styles.current_player}>
+                Current player {currentPlayer}
+            </h3>
             <div className={styles.board}>
                 {board.cells.map((row: Cell[], index: number) => (
                     <React.Fragment key={index}>

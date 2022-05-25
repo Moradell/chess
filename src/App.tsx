@@ -4,7 +4,6 @@ import { useDispatch } from 'react-redux';
 import { toggleCurrentPlayer } from './store/gameInformationSlice';
 import { Board } from './models/Board';
 
-import Timer from './components/Timer/Timer';
 import BoardComponent from './components/BoardComponent/BoardComponent';
 import LostFigures from './components/LostFigures/LostFigures';
 import GameInformationBar from './components/GameInformationBar/GameInformationBar';
@@ -31,16 +30,13 @@ function App() {
 
     return (
         <div className="app">
-            <Timer
-                restart={restart}
-            />
             <GameInformationBar />
             <BoardComponent
                 board={board}
                 setBoard={setBoard}
             />
             <GameOptionsBar />
-            <div>
+            {/* <div>
                 <LostFigures
                     title='White figures'
                     figures={board.lostWhiteFigures}
@@ -49,7 +45,7 @@ function App() {
                     title='Black figures'
                     figures={board.lostBlackFigures}
                 />
-            </div>
+            </div> */}
         </div>
     );
 }

@@ -6,11 +6,11 @@ import { Colors } from '../../constants/colors.enum';
 
 import styles from './Timer.module.scss';
 
-interface TimerProps {
-    restart: () => void;
-}
+// interface TimerProps {
+//     restart: () => void;
+// }
 
-export default function Timer({ restart }: TimerProps) {
+export default function Timer() {
     const [blackTime, setBlackTime] = useState(300);
     const [whiteTime, setWhiteTime] = useState(300);
 
@@ -39,22 +39,29 @@ export default function Timer({ restart }: TimerProps) {
         setWhiteTime(prev => prev - 1);
     }
 
-    function handleRestart() {
-        setWhiteTime(300);
-        setBlackTime(300);
-        restart();
-    }
+    // function handleRestart() {
+    //     setWhiteTime(300);
+    //     setBlackTime(300);
+    //     restart();
+    // }
 
   return (
-    <div>
+    <div className={styles.timer}>
+        <div className={styles.timer__title}>
+            Время:
+        </div>
         <div>
-            <button
+            {/* <button
                 onClick={() => handleRestart()}
             >
                 Restart game
-            </button>
-            <h2>Black - {blackTime}</h2>
-            <h2>White - {whiteTime}</h2>
+            </button> */}
+            <h2 className={styles.timer__time}>
+                Black - {blackTime}
+            </h2>
+            <h2 className={styles.timer__time}>
+                White - {whiteTime}
+            </h2>
         </div>
     </div>
   );
