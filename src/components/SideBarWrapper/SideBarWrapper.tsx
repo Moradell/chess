@@ -8,8 +8,18 @@ interface SideBarProps {
 
 export default function SideBarWrapper({ children }: SideBarProps) {
   return (
-    <div className={styles.sideBar}>
-        {children}
+      <div className={styles.container}>
+        <div className={styles.background_img}>
+          <div className={styles.box}>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <div className={styles.content}>
+              {children}
+            </div>
+          </div>
+      </div>
     </div>
   );
 }

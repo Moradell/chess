@@ -10,7 +10,6 @@ const initialState: GameInformationState = {
     currentPlayer: Colors.WHITE,
 }
 
-
 const gameInformationSlice = createSlice({
     name: 'gameInformation',
     initialState,
