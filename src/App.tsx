@@ -1,4 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { RootState } from './store/store';
+import { toggleCurrentPlayer } from './store/gameInformationSlice';
+import { Board } from './models/Board';
 
 import Timer from './components/Timer/Timer';
 import BoardComponent from './components/BoardComponent/BoardComponent';
@@ -6,19 +11,18 @@ import LostFigures from './components/LostFigures/LostFigures';
 import GameInformationBar from './components/GameInformationBar/GameInformationBar';
 import GameOptionsBar from './components/GameOptionsBar/GameOptionsBar';
 
-import { Board } from './models/Board';
-import { Player } from './models/Player';
-
-import { Colors } from './constants/colors.enum';
 
 function App() {
     const [board, setBoard] = useState<Board>(new Board());
-    const [whitePlayer, setWhitePlayer] = useState(new Player(Colors.WHITE));
-    const [blackPlayer, setBlackPlayer] = useState(new Player(Colors.BLACK));
-    const [currentPlayer, setCurrentPlayer] = useState<Player | null>(null);
+
+    const currUsr = useSelector((state: RootState) => state.gameInfo.currentPlayer);
+
+    const dispatch = useDispatch();
+    const swapPlayer = () => dispatch(toggleCurrentPlayer());
 
     useEffect(() => {
         restart();
+        console.log(currUsr);
     }, []);
 
     function restart() {
@@ -26,25 +30,18 @@ function App() {
         newBoard.initCells();
         newBoard.addFigures();
         setBoard(newBoard);
-        setCurrentPlayer(whitePlayer);
-    }
-
-    function swapPlayer() {
-        setCurrentPlayer(currentPlayer?.color === Colors.WHITE ? blackPlayer : whitePlayer);
+        swapPlayer();
     }
 
     return (
         <div className="app">
             <Timer
                 restart={restart}
-                currentPlayer={currentPlayer}
             />
             <GameInformationBar />
             <BoardComponent
                 board={board}
                 setBoard={setBoard}
-                currentPlayer={currentPlayer}
-                swapPlayer={swapPlayer}
             />
             <GameOptionsBar />
             <div>

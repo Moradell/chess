@@ -1,18 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { Player } from "../models/Player";
 import { Colors } from "../constants/colors.enum";
 
 interface GameInformationState {
-    whitePlayer: Player;
-    blackPlayer: Player;
-    currentPlayer: Player | null;
+    currentPlayer: Colors | null;
 }
 
 const initialState: GameInformationState = {
-    whitePlayer: new Player(Colors.WHITE),
-    blackPlayer: new Player(Colors.BLACK),
-    currentPlayer: null,
+    currentPlayer: Colors.WHITE,
 }
 
 
@@ -20,9 +15,8 @@ const gameInformationSlice = createSlice({
     name: 'gameInformation',
     initialState,
     reducers: {
-        toggleCurrentPlayer(state, action) {
-            console.log(state);
-            console.log(action);
+        toggleCurrentPlayer(state) {
+            state.currentPlayer = state.currentPlayer === Colors.WHITE ? Colors.BLACK : Colors.WHITE;
         }
     }
 });

@@ -1,21 +1,22 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useSelector } from 'react-redux';
 
-import { Player } from '../../models/Player';
-
+import { RootState } from '../../store/store';
 import { Colors } from '../../constants/colors.enum';
 
 import styles from './Timer.module.scss';
 
 interface TimerProps {
-    currentPlayer: Player | null;
     restart: () => void;
 }
 
-export default function Timer({ currentPlayer, restart }: TimerProps) {
+export default function Timer({ restart }: TimerProps) {
     const [blackTime, setBlackTime] = useState(300);
     const [whiteTime, setWhiteTime] = useState(300);
 
     const timer = useRef<null | ReturnType<typeof setInterval>>(null);
+
+    const currentPlayer = useSelector((state: RootState) => state.gameInfo.currentPlayer);
 
     useEffect(() => {
         startTimer();
@@ -26,7 +27,7 @@ export default function Timer({ currentPlayer, restart }: TimerProps) {
             clearInterval(timer.current);
         }
 
-        const callback = currentPlayer?.color === Colors.WHITE ? decrementWhiteTimer : decrementBlackTimer;
+        const callback = currentPlayer === Colors.WHITE ? decrementWhiteTimer : decrementBlackTimer;
         timer.current = setInterval(callback, 1000);
     }
 

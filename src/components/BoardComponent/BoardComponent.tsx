@@ -1,27 +1,29 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import CellComponent from '../CellComponent/CellComponent';
-
+import { RootState } from '../../store/store';
+import { toggleCurrentPlayer } from '../../store/gameInformationSlice';
 import { Board } from '../../models/Board';
 import { Cell } from '../../models/Cell';
-import { Player } from '../../models/Player';
+
+import CellComponent from '../CellComponent/CellComponent';
 
 import styles from './BoardComponent.module.scss';
 
 interface BoardProps {
   board: Board;
   setBoard: (board: Board) => void;
-  currentPlayer: Player | null;
-  swapPlayer: () => void;
 }
 
 export default function BoardComponent({
     board,
     setBoard,
-    currentPlayer,
-    swapPlayer,
 }: BoardProps) {
     const [selectedCell, setSelectedCell] = useState<Cell | null>(null);
+
+    const currentPlayer = useSelector((state: RootState) => state.gameInfo.currentPlayer);
+    const dispatch = useDispatch();
+    const swapPlayer = () => dispatch(toggleCurrentPlayer());
 
     useEffect(() => {
         highlightCells();
@@ -33,7 +35,7 @@ export default function BoardComponent({
             swapPlayer();
             setSelectedCell(null);
         } else {
-            if (cell.figure?.color === currentPlayer?.color) {
+            if (cell.figure?.color === currentPlayer) {
                 setSelectedCell(cell);
             }
         }
@@ -55,7 +57,7 @@ export default function BoardComponent({
 
     return (
         <div className={styles.board_wrapper}>
-            <h3>Current player {currentPlayer?.color}</h3>
+            <h3>Current player {currentPlayer}</h3>
             <div className={styles.board}>
                 {board.cells.map((row: Cell[], index: number) => (
                     <React.Fragment key={index}>
