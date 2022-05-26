@@ -5,7 +5,6 @@ import { toggleCurrentPlayer } from './store/gameInformationSlice';
 import { Board } from './models/Board';
 
 import BoardComponent from './components/BoardComponent/BoardComponent';
-import LostFigures from './components/LostFigures/LostFigures';
 import GameInformationBar from './components/GameInformationBar/GameInformationBar';
 import GameOptionsBar from './components/GameOptionsBar/GameOptionsBar';
 
@@ -35,17 +34,9 @@ function App() {
                 board={board}
                 setBoard={setBoard}
             />
-            <GameOptionsBar />
-            {/* <div>
-                <LostFigures
-                    title='White figures'
-                    figures={board.lostWhiteFigures}
-                />
-                <LostFigures
-                    title='Black figures'
-                    figures={board.lostBlackFigures}
-                />
-            </div> */}
+            <GameOptionsBar 
+                board={board}
+            />
         </div>
     );
 }
