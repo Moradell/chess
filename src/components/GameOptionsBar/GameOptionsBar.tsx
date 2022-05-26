@@ -21,12 +21,7 @@ export default function GameOptionsBar({ board }: GameOptionsProps) {
           <Timer />
           <div>
             <LostFigures
-                title='White figures'
-                figures={board.lostWhiteFigures}
-            />
-            <LostFigures
-                title='Black figures'
-                figures={board.lostBlackFigures}
+                board={board}
             />
           </div>
       </div>
