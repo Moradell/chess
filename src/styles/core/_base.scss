@@ -12,6 +12,10 @@ body {
   font-family: $font-family-ptserif;
 }
 
+ul {
+  list-style: none;
+}
+
 .app {
   width: 100vw;
   height: 100vh;

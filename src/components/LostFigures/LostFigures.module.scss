@@ -1,5 +1,6 @@
 .lostFigures__title {
     margin-bottom: 20px;
+    font-weight: 700;
 }
 
 .lostFigures__lists {
@@ -7,7 +8,18 @@
     justify-content: space-between;
 
     padding: 0 20px;
+}
 
-    font-weight: 700;
+.figureList__title {
+    margin-bottom: 15px;
+
+    font-weight: 600;
     text-transform: uppercase;
+}
+
+.figureList__figureItem {
+    display: flex;
+    justify-content: start;
+
+    margin-bottom: 5px;
 }

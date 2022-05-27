@@ -19,9 +19,11 @@ export default function LostFigures({ board }: LostFiguresProps) {
           <div className={styles.lostFigures__lists}>
             <FigureList
                 color={Colors.BLACK}
+                figures={board.lostBlackFigures}
             />
             <FigureList
                 color={Colors.WHITE}
+                figures={board.lostWhiteFigures}
             />
           </div>
       </div>
