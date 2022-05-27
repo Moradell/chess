@@ -8,7 +8,9 @@ export default function GameInformationBar() {
   return (
     <SideBarWrapper>
       <div>
-          GameInformationBar
+        <div className={styles.gameInformationBar__title}>
+            Настройки игры
+        </div>
       </div>
     </SideBarWrapper>
   );

@@ -15,7 +15,7 @@ export default function GameOptionsBar({ board }: GameOptionsProps) {
   return (
     <SideBarWrapper>
       <div>
-          <div className={styles.title}>
+          <div className={styles.gameOptionsBar__title}>
             Текщая игра:
           </div>
           <Timer />
