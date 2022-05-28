@@ -5,8 +5,8 @@ import { toggleCurrentPlayer } from './store/gameInformationSlice';
 import { Board } from './models/Board';
 
 import BoardComponent from './components/BoardComponent/BoardComponent';
-import GameInformationBar from './components/GameInformationBar/GameInformationBar';
 import GameOptionsBar from './components/GameOptionsBar/GameOptionsBar';
+import GameInformationBar from './components/GameInformationBar/GameInformationBar';
 
 
 function App() {
@@ -29,12 +29,12 @@ function App() {
 
     return (
         <div className="app">
-            <GameInformationBar />
+            <GameOptionsBar />
             <BoardComponent
                 board={board}
                 setBoard={setBoard}
             />
-            <GameOptionsBar 
+            <GameInformationBar 
                 board={board}
             />
         </div>

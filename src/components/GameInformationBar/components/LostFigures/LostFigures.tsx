@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Board } from '../../models/Board';
-import { Colors } from '../../constants/colors.enum';
+import { Board } from '../../../../models/Board';
+import { Colors } from '../../../../constants/colors.enum';
 import FigureList from './FigureList';
 
 import styles from './LostFigures.module.scss';

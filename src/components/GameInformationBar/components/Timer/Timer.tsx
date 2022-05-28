@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import { RootState } from '../../store/store';
-import { Colors } from '../../constants/colors.enum';
+import { RootState } from '../../../../store/store';
+import { Colors } from '../../../../constants/colors.enum';
 
 import styles from './Timer.module.scss';
 

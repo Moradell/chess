@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Colors } from '../../constants/colors.enum';
-import { Figure } from '../../models/figures/Figure';
+import { Colors } from '../../../../constants/colors.enum';
+import { Figure } from '../../../../models/figures/Figure';
 
 import styles from './LostFigures.module.scss';
 
