@@ -2,15 +2,23 @@
 
 ## Installation
 
+### Clone the repository
 ```
-# Clone the repository
 git clone https://github.com/Moradell/chess.git
-# Enter into the directory
+```
+### Enter into the directory
+```
 cd chess/
-# Install the dependencies
+```
+### Install the dependencies
+```
 npm i
-# Launch the application
+```
+### Launch the application
+```
 npm start
-# If the application does not start automatically, open the following link in your browser
+```
+### If the application does not start automatically, open the following link in your browser
+```
 http://localhost:3000
 ```
